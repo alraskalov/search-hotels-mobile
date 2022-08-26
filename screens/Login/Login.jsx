@@ -1,7 +1,7 @@
 import { StyleSheet, View, StatusBar, ImageBackground } from 'react-native';
 import { useForm } from 'react-hook-form';
-import background from '../assets/images/background.png';
-import { Button, Form, Input } from '../components/UI';
+import background from '../../assets/images/background.png';
+import { Button, Form, Input } from '../../components/UI';
 
 const loginRules = {
   required: 'Логин не может быть пустым',
