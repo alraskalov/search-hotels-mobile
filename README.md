@@ -1,1 +1,0 @@
-# search-hotels-mobile
