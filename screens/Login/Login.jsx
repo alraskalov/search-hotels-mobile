@@ -39,7 +39,6 @@ export const Login = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
-    await AsyncStorage.setItem('user', JSON.stringify(data));
     reset();
   };
 
