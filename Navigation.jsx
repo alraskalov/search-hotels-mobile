@@ -33,7 +33,7 @@ const Stacks = () => {
 
 const Tabs = () => {
   return (
-    <Tab.Navigator initialRouteName="Авторизация">
+    <Tab.Navigator initialRouteName="Поиск">
       <Tab.Screen
         name="Поиск"
         component={Stacks}
