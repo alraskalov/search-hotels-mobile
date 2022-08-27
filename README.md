@@ -25,6 +25,7 @@
 <div align="center">
     <img src="/assets/gifs/demonstration.gif" width="30%"</img>
 </div>
+
 ## 📺 Экраны
 
 <div align="center">
