@@ -3,7 +3,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { Home, Login, Hotel } from './screens';
+import { Home, FavoritesHotels, Hotel } from './screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,6 +40,10 @@ const Tabs = () => {
         options={{
           headerShown: false,
         }}
+      ></Tab.Screen>
+            <Tab.Screen
+        name="Избранное"
+        component={FavoritesHotels}
       ></Tab.Screen>
     </Tab.Navigator>
   );
