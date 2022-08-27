@@ -3,6 +3,7 @@ import { View, Pressable, Text, StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { useDispatch } from 'react-redux';
 import { resetFilter } from '../../../redux/actions/userAction/userAction';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export const Select = ({ children, onSelectClick, btnValue, filter }) => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export const Select = ({ children, onSelectClick, btnValue, filter }) => {
     setFocus(false);
     dispatch(resetFilter());
   };
-  
+
   return (
       <Pressable
         onBlur={selectOnBlur}

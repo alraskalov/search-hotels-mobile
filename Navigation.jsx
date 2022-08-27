@@ -1,5 +1,5 @@
 import React from 'react';
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,9 +11,9 @@ const HomeStack = createNativeStackNavigator();
 
 const Stacks = () => {
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator initialRouteName='Search'>
       <HomeStack.Screen
-        name="HomeScreen"
+        name="Search"
         component={Home}
         options={{
           headerShown: false,
@@ -33,15 +33,34 @@ const Stacks = () => {
 
 const Tabs = () => {
   return (
-    <Tab.Navigator initialRouteName="Поиск">
+    <Tab.Navigator initialRouteName="Авторизация">
       <Tab.Screen
         name="Поиск"
         component={Stacks}
         options={{
           headerShown: false,
+          tabBarIcon: ({ color, size }) => {
+            return (
+              <MaterialCommunityIcons
+                name="text-box-search-outline"
+                size={size}
+                color={color}
+              />
+            );
+          },
         }}
       />
-      <Tab.Screen name="Избранное" component={FavoritesHotels} />
+      <Tab.Screen
+        name="Избранное"
+        component={FavoritesHotels}
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return (
+              <MaterialCommunityIcons name="star" size={size} color={color} />
+            );
+          },
+        }}
+      />
       <Tab.Screen
         name="Авторизация"
         component={Login}
@@ -53,7 +72,21 @@ const Tabs = () => {
           tabBarButton: () => null,
         }}
       />
-      <Tab.Screen name="Профиль" component={Profile} />
+      <Tab.Screen
+        name="Профиль"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return (
+              <MaterialCommunityIcons
+                name="account"
+                size={size}
+                color={color}
+              />
+            );
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 };
