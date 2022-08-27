@@ -23,7 +23,7 @@ const dayCountRules = {
   },
 };
 
-const Search = () => {
+const Search = ({ navigate }) => {
   const dateStart = new Date().toLocaleDateString('en-CA');
   const {
     control,
@@ -60,7 +60,7 @@ const Search = () => {
     ]);
     const dateEnd = countingDays();
     console.log(location, dateStart, dateEnd);
-    
+
     getHotels(location, dateStart, dateEnd).then((data) => {
       console.log(data);
     });
@@ -75,6 +75,7 @@ const Search = () => {
     getHotels(location, date, dateEnd).then((data) => {
       console.log(data);
     });
+    navigate('Список отелей');
 
     // dispatch(fetchHotelsRequest({ location, dateStart, dateEnd, dayCount }));
   };

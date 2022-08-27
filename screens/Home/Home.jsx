@@ -1,8 +1,10 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StatusBar, ScrollView } from 'react-native';
 import Search from '../../components/Search/Search';
 
 export const Home = () => {
+  const { navigate } = useNavigation();
   return (
     <ScrollView
       contentContainerStyle={{
@@ -13,7 +15,7 @@ export const Home = () => {
       keyboardShouldPersistTaps="handled"
     >
       <StatusBar barStyle="dark-content" />
-      <Search />
+      <Search navigate={navigate} />
     </ScrollView>
   );
 };

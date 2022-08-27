@@ -1,17 +1,42 @@
 import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { Home, Login } from './screens';
+import { Home, Login, Hotel } from './screens';
 
 const Tab = createBottomTabNavigator();
+
+const HomeStack = createNativeStackNavigator();
+
+const Stacks = () => {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="HomeScreen"
+        component={Home}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <HomeStack.Screen
+        name="Список отелей"
+        component={Hotel}
+        options={{
+          headerBackTitleVisible: false,
+          headerShadowVisible: false,
+        }}
+      />
+    </HomeStack.Navigator>
+  );
+};
 
 const Tabs = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="Поиск"
+        component={Stacks}
         options={{
           headerShown: false,
         }}
