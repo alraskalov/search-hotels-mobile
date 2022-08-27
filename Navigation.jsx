@@ -3,7 +3,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { Home, FavoritesHotels, Hotel } from './screens';
+import { Home, FavoritesHotels, Hotel, Login, Profile } from './screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,18 +33,27 @@ const Stacks = () => {
 
 const Tabs = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName="Авторизация">
       <Tab.Screen
         name="Поиск"
         component={Stacks}
         options={{
           headerShown: false,
         }}
-      ></Tab.Screen>
-            <Tab.Screen
-        name="Избранное"
-        component={FavoritesHotels}
-      ></Tab.Screen>
+      />
+      <Tab.Screen name="Избранное" component={FavoritesHotels} />
+      <Tab.Screen
+        name="Авторизация"
+        component={Login}
+        options={{
+          headerShown: false,
+          tabBarStyle: {
+            display: 'none',
+          },
+          tabBarButton: () => null,
+        }}
+      />
+      <Tab.Screen name="Профиль" component={Profile} />
     </Tab.Navigator>
   );
 };

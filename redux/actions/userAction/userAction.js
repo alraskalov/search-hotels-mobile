@@ -15,6 +15,10 @@ export const setUser = (payload) => ({
   payload,
 });
 
+export const userLogout = () => ({
+    type: userTypes.USER_LOGOUT,
+  });
+
 export const filterByStars = () => ({
   type: userTypes.FILTER_BY_STARS,
 });

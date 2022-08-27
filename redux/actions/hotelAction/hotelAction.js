@@ -14,3 +14,7 @@ export const fetchHotelsFailure = (payload) => ({
   type: hotelsTypes.FETCH_HOTELS_FAILURE,
   payload,
 });
+
+export const hotelsReset = () => ({
+  type: hotelsTypes.HOTELS_RESET,
+});

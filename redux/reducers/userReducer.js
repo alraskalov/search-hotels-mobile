@@ -64,6 +64,19 @@ const userReducer = (state = initialState, action) => {
         ...state,
         email: action.payload.email,
       };
+    case userTypes.USER_LOGOUT:
+      return {
+        email: '',
+        favoritesHotels: [],
+        appliedFilter: {
+          price: {
+            type: '',
+          },
+          stars: {
+            type: '',
+          },
+        },
+      };
     case userTypes.SET_FAVORITE_HOTELS:
       hotels.push(...state.favoritesHotels, action.payload.hotel);
       return {

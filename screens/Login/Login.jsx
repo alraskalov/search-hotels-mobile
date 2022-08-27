@@ -1,7 +1,15 @@
-import { StyleSheet, View, StatusBar, ImageBackground } from 'react-native';
+import {
+  StyleSheet,
+  ScrollView,
+  StatusBar,
+  ImageBackground,
+} from 'react-native';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 import background from '../../assets/images/background.png';
 import { Button, Form, Input } from '../../components/UI';
+import { setUser } from '../../redux/actions/userAction/userAction';
 
 const loginRules = {
   required: 'Логин не может быть пустым',
@@ -24,6 +32,8 @@ const passwordRules = {
 };
 
 export const Login = () => {
+  const dispatch = useDispatch();
+  const { navigate } = useNavigation();
   const {
     control,
     handleSubmit,
@@ -38,12 +48,14 @@ export const Login = () => {
   });
 
   const onSubmit = async (data) => {
-    console.log(data);
+    const { email } = data;
+    dispatch(setUser({ email }));
+    navigate('Поиск');
     reset();
   };
 
   return (
-    <View style={styles.login}>
+    <ScrollView contentContainerStyle={styles.login}>
       <StatusBar theme="auto" />
       <ImageBackground source={background} style={styles.login__background}>
         <Form title="Simple Hotel Check">
@@ -68,17 +80,21 @@ export const Login = () => {
           />
         </Form>
       </ImageBackground>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   login: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
   },
   login__background: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    width: '100%',
   },
 });

@@ -46,6 +46,15 @@ const hotelReducer = (state = initialState, action) => {
         dateStart: '',
         error: action.payload.error,
       };
+
+    case hotelsTypes.HOTELS_RESET:
+      return {
+        pending: false,
+        hotels: [],
+        location: null,
+        dateStart: '',
+        error: null,
+      };
     default:
       return {
         ...state,
