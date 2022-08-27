@@ -22,18 +22,25 @@
   - На странице отображается карусель захардкоженных изображений. Изображение в карусели можно прокручивать.
 
 ## 📺 Демонстрация
+
 <div align="center">
+<details>
+    <summary>Click me</summary>
     <img src="/assets/gifs/demonstration.gif" width="30%"</img>
+</details>
 </div>
 
 ## 📺 Экраны
 
 <div align="center">
+<details>
+    <summary>Click me</summary>
     <img src="/assets/screenshots/1.jpg" width="30%"</img>
     <img src="/assets/screenshots/2.jpg" width="30%"</img>
     <img src="/assets/screenshots/3.jpg" width="30%"</img>
     <img src="/assets/screenshots/4.jpg" width="30%"</img>
     <img src="/assets/screenshots/5.jpg" width="30%"</img>
+</details>
 </div>
 
 ## 🧥 Описание логики работы экранов
