@@ -61,7 +61,11 @@ export const Login = () => {
             title="Пароль"
             rules={passwordRules}
           />
-          <Button isValid={isValid} onSubmit={handleSubmit(onSubmit)} />
+          <Button
+            isValid={isValid}
+            onSubmit={handleSubmit(onSubmit)}
+            title="Войти"
+          />
         </Form>
       </ImageBackground>
     </View>

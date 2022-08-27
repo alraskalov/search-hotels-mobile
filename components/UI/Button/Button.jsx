@@ -1,14 +1,14 @@
 import React from 'react';
 import { Pressable, Text, StyleSheet } from 'react-native';
 
-export const Button = ({ isValid, onSubmit }) => {
+export const Button = ({ isValid, onSubmit, title }) => {
   return (
     <Pressable
       style={[styles.button, !isValid ? '' : styles.button_active]}
       onPress={onSubmit}
       disabled={!isValid}
     >
-      <Text style={styles.button__text}>Войти</Text>
+      <Text style={styles.button__text}>{title}</Text>
     </Pressable>
   );
 };

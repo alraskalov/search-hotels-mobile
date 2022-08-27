@@ -1,11 +1,19 @@
 import React from 'react';
-import { StatusBar, Text, View } from 'react-native';
+import { StatusBar, ScrollView } from 'react-native';
+import Search from '../../components/Search/Search';
 
 export const Home = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <StatusBar barStyle='dark-content' />
-      <Text>Home</Text>
-    </View>
+    <ScrollView
+      contentContainerStyle={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+      keyboardShouldPersistTaps="handled"
+    >
+      <StatusBar barStyle="dark-content" />
+      <Search />
+    </ScrollView>
   );
 };

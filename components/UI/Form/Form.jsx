@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export const Form = ({ children, title }) => {
   return (
     <View style={styles.form}>
-      <Text style={styles.form__title}>{title}</Text>
+      {title && <Text style={styles.form__title}>{title}</Text>}
       <View style={styles.form__inputs}>{children}</View>
     </View>
   );
