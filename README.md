@@ -26,11 +26,11 @@
 <details>
     <summary>Click me</summary>
     <div align="center">
-        <img src="/assets/screenshots/1.jpg" width="20%"</img>
-        <img src="/assets/screenshots/2.jpg" width="20%"</img>
-        <img src="/assets/screenshots/3.jpg" width="20%"</img>
-        <img src="/assets/screenshots/4.jpg" width="20%"</img>
-        <img src="/assets/screenshots/5.jpg" width="20%"</img>
+        <img src="/assets/screenshots/1.jpg" width="30%"</img>
+        <img src="/assets/screenshots/2.jpg" width="30%"</img>
+        <img src="/assets/screenshots/3.jpg" width="30%"</img>
+        <img src="/assets/screenshots/4.jpg" width="30%"</img>
+        <img src="/assets/screenshots/5.jpg" width="30%"</img>
     </div>
 </details>
 
