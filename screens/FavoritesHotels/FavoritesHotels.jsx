@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, Text } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { HotelList } from '../../components/HotelList/HotelList';
 import { Select } from '../../components/UI';
@@ -24,37 +24,52 @@ export const FavoritesHotels = () => {
     }
   };
   return (
-    <View style={{ alignItems: 'center', backgroundColor: '#F4F4F4' }}>
-      <View
-        style={{
-          width: '100%',
-          height: 70,
-          backgroundColor: '#fff',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-          flexDirection: 'row',
-        }}
-      >
-        <Select
-          onSelectClick={selectClick}
-          filter={filter.stars.type}
-          btnValue="stars"
-        >
-          Рейтинг
-        </Select>
-        <Select
-          onSelectClick={selectClick}
-          filter={filter.price.type}
-          btnValue="price"
-        >
-          Цена
-        </Select>
-      </View>
-      <FlatList
-        style={{ width: '100%' }}
-        data={favoritesHotels}
-        renderItem={({ item }) => <HotelList key={item.hotelId} hotel={item} />}
-      />
+    <View
+      style={{
+        alignItems: 'center',
+        backgroundColor: '#F4F4F4',
+        justifyContent: 'center',
+        flex: 1,
+      }}
+    >
+      {favoritesHotels.length === 0 ? (
+        <Text>Список пуст</Text>
+      ) : (
+        <>
+          <View
+            style={{
+              width: '100%',
+              height: 70,
+              backgroundColor: '#fff',
+              alignItems: 'center',
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+            }}
+          >
+            <Select
+              onSelectClick={selectClick}
+              filter={filter.stars.type}
+              btnValue="stars"
+            >
+              Рейтинг
+            </Select>
+            <Select
+              onSelectClick={selectClick}
+              filter={filter.price.type}
+              btnValue="price"
+            >
+              Цена
+            </Select>
+          </View>
+          <FlatList
+            style={{ width: '100%' }}
+            data={favoritesHotels}
+            renderItem={({ item }) => (
+              <HotelList key={item.hotelId} hotel={item} />
+            )}
+          />
+        </>
+      )}
     </View>
   );
 };

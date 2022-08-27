@@ -1,6 +1,6 @@
 # Проект Simple Hotel Check Mobile - мобильная версия приложение для поиска отелей
 
-Ссылка на Web-версию проект: **[Simple Hotel Check](https://search-hotels.vercel.app/)**
+Ссылка на Web-версию проекта: **[Simple Hotel Check](https://search-hotels.vercel.app/)**
 
 ## 🧰 Экосистема
 

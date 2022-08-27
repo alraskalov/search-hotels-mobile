@@ -22,6 +22,7 @@ export const HotelList = ({ hotel }) => {
     ({ hotelId }) => hotelId === hotel.hotelId
   );
 
+
   const handleLikeClick = (id) => {
     const isLiked = favoritesHotels.some(({ hotelId }) => hotelId === id);
 
