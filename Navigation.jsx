@@ -11,7 +11,7 @@ const HomeStack = createNativeStackNavigator();
 
 const Stacks = () => {
   return (
-    <HomeStack.Navigator initialRouteName='Search'>
+    <HomeStack.Navigator initialRouteName="Search">
       <HomeStack.Screen
         name="Search"
         component={Home}
