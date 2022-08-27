@@ -24,7 +24,7 @@ const hotelReducer = (state = initialState, action) => {
           hotelName: value.hotelName,
           priceAvg: value.priceAvg,
           stars: value.stars,
-          dateStart: action.payload.dateStart,
+          dateStart: action.payload.date,
           dateEnd: action.payload.dateEnd,
           dayCount: action.payload.dayCount,
         });
@@ -34,7 +34,7 @@ const hotelReducer = (state = initialState, action) => {
         pending: false,
         hotels,
         location: action.payload.location,
-        dateStart: action.payload.dateStart,
+        dateStart: action.payload.date,
         error: null,
       };
     case hotelsTypes.FETCH_HOTELS_FAILURE:

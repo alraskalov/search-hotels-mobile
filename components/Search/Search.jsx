@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Button, Form, Input } from '../../components/UI';
 import { useForm } from 'react-hook-form';
-import { getHotels } from '../../utils/api';
+import { fetchHotelsRequest } from '../../redux/actions/hotelAction/hotelAction';
 
 const dateRules = {
   required: 'Поле не может быть пустым',
@@ -24,6 +25,7 @@ const dayCountRules = {
 };
 
 const Search = ({ navigate }) => {
+  const dispatch = useDispatch();
   const dateStart = new Date().toLocaleDateString('en-CA');
   const {
     control,
@@ -52,32 +54,12 @@ const Search = ({ navigate }) => {
     return dateEnd;
   };
 
-  useEffect(() => {
-    const [location, dateStart, dayCount] = getValues([
-      'location',
-      'date',
-      'dayCount',
-    ]);
-    const dateEnd = countingDays();
-    console.log(location, dateStart, dateEnd);
-
-    getHotels(location, dateStart, dateEnd).then((data) => {
-      console.log(data);
-    });
-    // dispatch(fetchHotelsRequest({ location, dateStart, dateEnd, dayCount }));
-  }, []);
-
   const onSubmit = (data) => {
     const { location, date, dayCount } = data;
     const dateEnd = countingDays(dayCount);
-    console.log(location, date, dateEnd);
 
-    getHotels(location, date, dateEnd).then((data) => {
-      console.log(data);
-    });
+    dispatch(fetchHotelsRequest({ location, date, dateEnd, dayCount }));
     navigate('Список отелей');
-
-    // dispatch(fetchHotelsRequest({ location, dateStart, dateEnd, dayCount }));
   };
 
   return (

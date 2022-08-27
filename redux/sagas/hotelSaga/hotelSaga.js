@@ -4,16 +4,19 @@ import { hotelsTypes } from '../../constants';
 import {
   fetchHotelsFailure,
   fetchHotelsSuccess,
-} from '../../actions/hotelActions/hotelActions';
+} from '../../actions/hotelAction/hotelAction';
 
 function* workerFetchHotels(action) {
   try {
-    const { location, dateStart, dateEnd, dayCount } = action.payload;
-    const hotels = yield call(getHotels, location, dateStart, dateEnd);
+    const { location, date, dateEnd, dayCount } = action.payload;
+    console.log(date);
+    console.log(dateEnd);
+    const hotels = yield call(getHotels, location, date, dateEnd);
+    console.log(hotels);
     yield put(
       fetchHotelsSuccess({
         hotels,
-        dateStart,
+        date,
         dateEnd,
         location,
         dayCount,

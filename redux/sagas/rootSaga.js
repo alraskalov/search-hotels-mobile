@@ -1,6 +1,6 @@
 import { all, fork } from 'redux-saga/effects';
-import hotelsSaga from './hotelsSaga/hotelsSaga';
+import hotelSaga from './hotelSaga/hotelSaga';
 
 export default function* rootSaga() {
-  yield all([fork(hotelsSaga)]);
+  yield all([fork(hotelSaga)]);
 }
