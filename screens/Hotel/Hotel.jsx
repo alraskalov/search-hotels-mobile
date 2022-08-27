@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 export const Hotel = () => {
   const hotels = useSelector((state) => state?.hotel?.hotels || []);
   const { pending, error } = useSelector((state) => state?.hotel);
-  console.log(pending);
   return (
     <View
       style={{
